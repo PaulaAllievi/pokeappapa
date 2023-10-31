@@ -40,7 +40,7 @@ const PokemonProvider = ({children}) => {
 
             const baseURL = 'https://pokeapi.co/api/v2/';
         
-            const res = await fetch(`${baseURL}pokemon?limit=100000&offset=0`) 
+            const res = await fetch(`${baseURL}pokemon?limit=500&offset=0`) 
             const data = await res.json();
             
             const promises = data.results.map(async pokemon => {

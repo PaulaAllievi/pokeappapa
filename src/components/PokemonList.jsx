@@ -16,7 +16,7 @@ export const PokemonList = () => {
       ) : (
         <>
         <div className='list'>
-            {allPokemons.map(pokemon => <CardPokemon pokemon={pokemon} key={pokemon.id} />)}
+            {allPokemons && allPokemons.map((pokemon => <CardPokemon pokemon={pokemon} key={pokemon.id} />))}
         </div>
         <div className='button-cargar'>
               <button onClick={onClickLoadMore}>

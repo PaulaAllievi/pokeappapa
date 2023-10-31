@@ -6,7 +6,7 @@ import '../index.css'
 const HomePage = () => {
   
   return (
-    <div>
+    <div className='container'>
       <PokemonList/>
     </div>
   )
