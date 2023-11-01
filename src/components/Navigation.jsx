@@ -1,20 +1,21 @@
-import React, { useContext } from 'react';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
-import logo from '../assets/logo pokeapp.png';
-import { PokemonContext } from '../context/PokemonContext';
-import '../index.css';
+import React, { useContext } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import logo from "../assets/logo pokeapp.png";
+import { PokemonContext } from "../context/PokemonContext";
+import "../index.css";
 
 const Navigation = () => {
-  const { onInputChange, valueSearch, onResetForm } = useContext(PokemonContext);
+  const { onInputChange, valueSearch, onResetForm } =
+    useContext(PokemonContext);
   const navigate = useNavigate();
 
   const onSearchSubmit = (e) => {
     e.preventDefault();
-    
+
     if (!valueSearch.trim()) {
-      alert('Por favor, ingresa un valor en el campo de búsqueda.');
+      alert("Por favor, ingresa un valor en el campo de búsqueda.");
     } else {
-      navigate('/search', {
+      navigate("/search", {
         state: valueSearch,
       });
       onResetForm();
@@ -22,11 +23,15 @@ const Navigation = () => {
   };
 
   return (
-    <>
+    <div className="container">
       <div className="navigation">
         <header>
           <Link to="/">
-            <img style={{ width: '200px', height: 'auto' }} src={logo} alt="logo pokeapp" />
+            <img
+              style={{ width: "200px", height: "auto" }}
+              src={logo}
+              alt="logo pokeapp"
+            />
           </Link>
         </header>
         <form className="form" onSubmit={onSearchSubmit}>
@@ -44,7 +49,7 @@ const Navigation = () => {
         </form>
       </div>
       <Outlet />
-    </>
+    </div>
   );
 };
 
